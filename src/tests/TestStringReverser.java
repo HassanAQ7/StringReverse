@@ -11,10 +11,10 @@ import org.junit.jupiter.api.BeforeAll;
 
 
 class TestStringReverser {
-    private StringReverser reverser;
+    private static StringReverser reverser;
 
     @BeforeAll
-    public void setup() {
+    public static void setup() {
         reverser = new StringReverser();
     }
 
@@ -23,7 +23,7 @@ class TestStringReverser {
         String input = "hello";
         String expected = "olleh";
         String actual = reverser.reverseString(input);
-        assertEquals(expected, actual, "The reversed string should match the expected output.");
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -31,7 +31,7 @@ class TestStringReverser {
         String input = "";
         String expected = "";
         String actual = reverser.reverseString(input);
-        assertEquals(expected, actual, "Reversing an empty string should return an empty string.");
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -39,7 +39,7 @@ class TestStringReverser {
         String input = "   ";
         String expected = "   ";
         String actual = reverser.reverseString(input);
-        assertEquals(expected, actual, "Reversing a blank string should return the same blank string.");
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -47,10 +47,26 @@ class TestStringReverser {
         String input = "Hello World";
         String expected = "dlroW olleH";
         String actual = reverser.reverseSentence(input);
-        assertEquals(expected, actual, "The reversed sentence should match the expected output.");
+        assertEquals(expected, actual);
     }
 
-    
+    @Test
+    void testReverseEmptySentence() {
+        String input = "";
+        String expected = "";
+        String actual = reverser.reverseSentence(input);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testReverseBlankSentence() {
+        String input = "   ";
+        String expected = "   ";
+        String actual = reverser.reverseSentence(input);
+        assertEquals(expected, actual);
+    }
+
+
 
 }
 
