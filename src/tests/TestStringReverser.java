@@ -42,6 +42,16 @@ class TestStringReverser {
         assertEquals(expected, actual, "Reversing a blank string should return the same blank string.");
     }
 
+    @Test
+    void testReverseSentence() {
+        String input = "Hello World";
+        String expected = "dlroW olleH";
+        String actual = reverser.reverseSentence(input);
+        assertEquals(expected, actual, "The reversed sentence should match the expected output.");
+    }
+
+    
+
 }
 
    
