@@ -34,6 +34,14 @@ class TestStringReverser {
         assertEquals(expected, actual, "Reversing an empty string should return an empty string.");
     }
 
+    @Test
+    void testReverseBlankString() {
+        String input = "   ";
+        String expected = "   ";
+        String actual = reverser.reverseString(input);
+        assertEquals(expected, actual, "Reversing a blank string should return the same blank string.");
+    }
+
 }
 
    
