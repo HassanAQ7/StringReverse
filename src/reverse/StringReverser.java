@@ -2,7 +2,7 @@ package reverse;
 
 public class StringReverser {
 
-    public static String reverseString(String str) {
+    public String reverseString(String str) {
         if (str.isBlank() && str.isEmpty()) {
             return str;
         }
@@ -11,7 +11,7 @@ public class StringReverser {
         return buffer.reverse().toString();
     }
 
-    public static String reverseSentence(String sentence) {
+    public String reverseSentence(String sentence) {
         if (sentence.isBlank() && sentence.isEmpty()) {
             return sentence;
         }
@@ -19,7 +19,8 @@ public class StringReverser {
         String[] words = sentence.split(" ");
         StringBuffer reversedSentence = new StringBuffer();
         for (int i = words.length - 1; i >= 0; i--) {
-            reversedSentence.append(words[i]);
+            StringBuffer wordBuffer = new StringBuffer(words[i]);
+            reversedSentence.append(wordBuffer.reverse().toString());
             if (i != 0) {
                 reversedSentence.append(" ");
             }
