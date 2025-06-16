@@ -3,7 +3,7 @@ package reverse;
 public class StringReverser {
 
     public static String reverseString(String str) {
-        if (str.isBlank()) {
+        if (str.isBlank() && str.isEmpty()) {
             return str;
         }
 
